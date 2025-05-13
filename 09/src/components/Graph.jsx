@@ -5,7 +5,7 @@ export const Graph = ({ population }) => {
     return null;
   }
 
-  const years = population.map((o) => o.year);
+  const years = population.map((o) => String(o.year));
   const values = population.map((o) => o.value);
 
   return (

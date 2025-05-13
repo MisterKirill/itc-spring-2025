@@ -24,8 +24,8 @@ export const Population = () => {
   return (
     <div>
       <select ref={ref} className={classes.select} onChange={handleChangeCountry} defaultValue="">
-      { data.map((d) => {
-        return <option value={ d.code }>{ d.country }</option>
+      { data.map((d, i) => {
+        return <option key={i} value={ d.code }>{ d.country }</option>
       }) }
       </select>
       <Graph population={ population } />
