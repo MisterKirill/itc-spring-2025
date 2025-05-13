@@ -5,10 +5,14 @@ export const Graph = ({ population }) => {
     return null;
   }
 
-  // TODO: ...
+  const years = population.map((o) => o.year);
+  const values = population.map((o) => o.value);
+
   return (
     <BarChart
       height={600}
+      xAxis={[{ data: years }]}
+      series={[{ data: values }]}
     />
   )
 }
