@@ -1,0 +1,15 @@
+.bind {
+  font-size: 24px;
+  margin-bottom: 10px;
+  outline: solid 1px #81a1c1;
+  padding: 8px;
+
+  width: 300px;
+}
+
+.waiting {
+  display: inline-block;
+  color: #f06d06;
+  font-size: 18px;
+  margin-left: 10px;
+}

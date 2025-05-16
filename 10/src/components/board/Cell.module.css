@@ -1,0 +1,17 @@
+.cell {
+  width: 100px;
+  height: 100px;
+
+  outline: solid 2px #4c566a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin {
+  width: 80px;
+  height: 80px;
+  background-color: #d08770;
+  border-radius: 50%;
+}
