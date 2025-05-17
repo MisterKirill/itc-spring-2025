@@ -6,18 +6,20 @@ import { useDispatch } from 'react-redux';
 import { positionSlice } from '../../store/slices/position';
 
 export const Bindings = () => {
-  const { setBind } = bindSlice.actions;
+  const { setBind, selectDirection } = bindSlice.actions;
   const { setPause } = positionSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {
     const bindHandler = (e) => {
+      dispatch(setBind(e.key));
+      dispatch(selectDirection(null));
     }
 
     document.addEventListener('keydown', bindHandler);
 
     return () => document.removeEventListener('keydown', bindHandler);
-  }, []);
+  }, [dispatch, setBind, selectDirection]);
 
   return (
     <div className={classes.bindings}>
