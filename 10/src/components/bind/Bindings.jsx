@@ -14,12 +14,13 @@ export const Bindings = () => {
     const bindHandler = (e) => {
       dispatch(setBind(e.key));
       dispatch(selectDirection(null));
+      dispatch(setPause(false));
     }
 
     document.addEventListener('keydown', bindHandler);
 
     return () => document.removeEventListener('keydown', bindHandler);
-  }, [dispatch, setBind, selectDirection]);
+  }, [dispatch, setBind, setPause, selectDirection]);
 
   return (
     <div className={classes.bindings}>

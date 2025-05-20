@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindSlice } from '../../store/slices/bind'
 import classes from './Bind.module.css'
@@ -7,7 +6,7 @@ import { positionSlice } from '../../store/slices/position';
 export const Bind = ({ direction }) => {
   const dispatch = useDispatch();
   const { getBinds, getDirection } = bindSlice.selectors;
-  const { setBind, selectDirection } = bindSlice.actions;
+  const { selectDirection } = bindSlice.actions;
   const { setPause } = positionSlice.actions;
   const cdirection = useSelector(getDirection);
   const binds = useSelector(getBinds);
@@ -15,6 +14,7 @@ export const Bind = ({ direction }) => {
   const waiting = direction === cdirection;
 
   const handleClick = () => {
+    dispatch(setPause(true));
     dispatch(selectDirection(direction));
   }
 
