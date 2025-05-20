@@ -10,6 +10,9 @@ export const Graph = ({ population }) => {
 
   return (
     <BarChart
+
+
+
       height={600}
       xAxis={[{ data: years }]}
       series={[{ data: values }]}
