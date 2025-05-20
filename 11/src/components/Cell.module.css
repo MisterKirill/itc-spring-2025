@@ -1,0 +1,9 @@
+.cell {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  background-color: #fff;
+  outline: solid 1px #000;
+}
