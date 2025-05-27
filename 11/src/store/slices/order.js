@@ -9,6 +9,7 @@ export const orderSlice = createSlice({
   initialState,
   reducers: {
     next: (state) => {
+      state.order = state.order === 'green' ? 'orange' : 'green';
     }
   },
   selectors: {
