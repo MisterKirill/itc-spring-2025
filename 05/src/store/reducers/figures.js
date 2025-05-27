@@ -1,7 +1,7 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  currentFigure: 'knight',
+  currentFigure: 'rook',
   knightPosition: {
     row: 0,
     column: 0,
@@ -20,6 +20,17 @@ export const figuresSlice = createSlice({
   initialState,
   reducers: {
     setToPosition: (state, action) => {
+      if (action.payload.row > maxRow || action.payload.column > maxColumn) return;
+
+      if (action.payload.figure === 'knight') {
+        state.knightPosition.row = action.payload.row;
+        state.knightPosition.column = action.payload.column;
+      } else {
+        state.rookPosition.row = action.payload.row;
+        state.rookPosition.column = action.payload.column;
+      }
+
+      state.currentFigure = state.currentFigure === 'knight' ? 'rook' : 'knight';
     }
   },
   selectors: {
